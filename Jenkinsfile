@@ -16,5 +16,12 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                withMaven(maven : 'MyMaven'){
+                sh 'mvn deploy'
+                }
+            }
+        }
     }
 }
